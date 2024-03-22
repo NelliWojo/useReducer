@@ -13,6 +13,12 @@ function reducer(state: State, action: Action) {
   const { type } = action;
 
   switch (type) {
+    case "increment": {
+      return { ...state, count: state.count + 1 }; // make a copy of a state & overwrire this state with a new count value
+    }
+    case "decrement": {
+      return { ...state, count: state.count - 1 };
+    }
     default:
       return state;
   }
